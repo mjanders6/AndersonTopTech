@@ -5,3 +5,7 @@
 :root {
   --bs-body-bg: var(--bs-gray-100);
 }
+
+p {
+  font-family: monospace;
+}
