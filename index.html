@@ -1,27 +1,45 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/styles.css">
-  <script defer src="./js/NavBar.js"></script>
-  <title>Anderson Top Tech Portfolio</title>
+  <title>Dynamic Navigation Bar</title>
 </head>
 
 <body>
-  <navbar-item>
-    <a slot="link1" class="nav-link" href="./index.html">Home</a>
-    <a slot="link2" class="nav-link" href="./pages/Home_Lab.html">Home Lab</a>
-    <a slot="link3" class="nav-link" href="./pages/Projects.html">Projects</a>
-  </navbar-item>
+  <!-- Use the custom navigation bar -->
+  <custom-nav></custom-nav>
 
+  <div class="container my-5">
+    <h1>Home</h1>
+    <div class="col-lg-8 px-0">
+      <p class="fs-5"></p>
+
+      <hr class="col-1 my-4">
+
+    </div>
+  </div>
+
+  <script src="./NavBar.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
   <script src="./js/main.js"></script>
+  <script>
+    // Access the custom element and update its links
+    const navElement = document.querySelector('custom-nav');
+
+    // Update the links dynamically
+    navElement.updateLinks([
+      { name: 'Home', href: './index.html' },
+      { name: 'Projects', href: './pages/Projects.html' },
+      { name: 'Home Lab', href: './pages/Home_Lab.html' },
+    ]);
+  </script>
 </body>
 
 </html>
